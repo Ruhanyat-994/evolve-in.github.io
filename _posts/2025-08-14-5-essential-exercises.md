@@ -1,11 +1,14 @@
 ---
+layout: post
 title: "5 Essential Exercises For Building Muscle"
 date: 2025-08-14
+category: "Gym Plan"
 author: "Mian Al Ruhanyat"
 description: "Master these 5 fundamental compound exercises for maximum muscle growth and strength."
 image: "/assets/images/posts/build-muscle.jpg"
 tags: ["Fitness", "Gym", "Strength"]
-category: "Gym Plan"
+program: "Gym Plan"
+
 ---
 
 ## Introduction

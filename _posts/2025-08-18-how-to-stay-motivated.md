@@ -6,6 +6,7 @@ description: "Struggling to stay on track? Here are 5 key strategies to keep you
 image: "/assets/images/posts/stay-motivated.jpg"
 tags: ["Motivation", "Productivity", "Mindset"]
 category: "Increase Productivity"
+
 ---
 
 

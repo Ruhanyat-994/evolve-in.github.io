@@ -1,10 +1,10 @@
 # Site settings
 title: EvolveIn
-brand: CTV Mentor
-description: "Transform Your Body with EvolveIn, Your Trusted Partner in Fitness."
-email: fitmaker@gmail.com
-url: "https://<YOUR-USERNAME>.github.io" # e.g., https://johndoe.github.io
-baseurl: "/<YOUR-REPO-NAME>" # e.g., /fitmaker-website
+brand: EvolveIn
+description: "Realize the potential Allah blessed you with through EvolveIn"
+email: evolvein.team@gmail.com
+url: "https://evolve-in.github.io" # e.g., https://johndoe.github.io
+baseurl: "" # e.g., /fitmaker-website
 
 # Build settings
 theme: minima

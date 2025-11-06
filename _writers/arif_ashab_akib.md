@@ -4,7 +4,7 @@ role: "Personal Trainer"
 image: "/assets/images/akib.png"
 ---
 
-Mian Al Ruhanyat is a certified personal trainer with over 10 years of experience in strength training and bodybuilding. He believes in a science-backed approach to muscle growth and nutrition.
+Arif Ashab Akib is a certified personal trainer with over 10 years of experience in strength training and bodybuilding. He believes in a science-backed approach to muscle growth and nutrition.
 
 ### Specialties
 * Strength & Conditioning

@@ -19,7 +19,7 @@
   padding: 0;
 }
 
-/* NEW: Added smooth scrolling */
+/* Added smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
@@ -556,7 +556,6 @@ h1, h2, h3, h4, h5, h6 {
 .post-meta span {
   display: inline-block;
 }
-/* NEW: Added styles for links in post-meta */
 .post-meta a {
   color: var(--text-secondary);
   text-decoration: none;
@@ -697,7 +696,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   margin-bottom: 1rem; /* Added margin */
 }
-/* NEW: Added styles for links in post-meta */
 .post-meta a {
   color: var(--primary-accent);
   text-decoration: none;
@@ -753,7 +751,6 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
   }
   
-  /* NEW: Stack intro/quote wrapper on tablets */
   .intro-quote-wrapper {
     grid-template-columns: 1fr;
     padding: 60px 30px;

@@ -1,10 +1,11 @@
 ---
 title: "5 Essential Exercises For Building Muscle"
 date: 2025-08-14
-tags: ["Workout", "Fitness", "Muscle"]
-image: "/assets/images/posts/build-muscle.jpg"
 author: "Mian Al Ruhanyat"
-description: "Discover the top exercises to build muscle effectively."
+description: "Master these 5 fundamental compound exercises for maximum muscle growth and strength."
+image: "/assets/images/posts/build-muscle.jpg"
+tags: ["Fitness", "Gym", "Strength"]
+category: "Gym Plan"
 ---
 
 ## Introduction

@@ -1,12 +1,13 @@
 ---
 title: "The Ultimate Guide To A Balanced Diet"
 date: 2025-08-15
-category: "Nutrition"
-tags: ["Diet", "Health", "Nutrition"]
+author: "Arif Ashab Akib"
+description: "Stop guessing what to eat. Learn the simple principles of a balanced diet."
 image: "/assets/images/posts/balanced-diet.jpg"
-author: "Arif Ashab Akibs"
-description: "Learn the fundamentals of a balanced diet for a healthier lifestyle."
+tags: ["Nutrition", "Health", "Diet"]
+category: "Gym Plan"
 ---
+
 
 ## What is a Balanced Diet?
 A balanced diet is one that provides your body with all the essential nutrients, vitamins, and minerals it needs to function at its best. It's not about restriction, but about getting the right proportions of:

@@ -1,11 +1,13 @@
 ---
 title: "How To Always Stay Motivated"
 date: 2025-08-18
-tags: ["Mindset", "Motivation", "Goals"]
-image: "/assets/images/posts/stay-motivated.jpg"
 author: "Arif Ashab Akib"
-description: "Motivation fades. Discipline is what keeps you going. Here's how to build it."
+description: "Struggling to stay on track? Here are 5 key strategies to keep your motivation high."
+image: "/assets/images/posts/stay-motivated.jpg"
+tags: ["Motivation", "Productivity", "Mindset"]
+category: "Increase Productivity"
 ---
+
 
 ## The Motivation Myth
 Motivation is a feeling. It's fleeting and unreliable. You can't wait to *feel* motivated to work out. You must build **discipline**.

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="section-header">
       <div>
-        <h2 class="section-title">EvolveIn <span class="highlight">Blog Posts</span></h2>
+        <h2 class="section-title">Fitmaker <span class="highlight">Blog Posts</span></h2>
         <p class="subtitle">Discover Essential Tips To Maximize Your Workout Results And Reach Your Fitness Goals Faster.</p>
       </div>
     </div>
@@ -17,10 +17,9 @@
           <div class="card-content">
             <h3>{{ featured_post.title }}</h3>
             <div class="post-meta">
-              <span>📅 {{ featured_post.date | date: "%B %d, %Y" }}</span>
-              <span>Program: <a href="{{ '/programs/' | relative_url }}{{ featured_post.category | slugify }}/">{{ featured_post.category }}</a></span>
+              <span>📅 {{ featured_post.date | date: "%B %d" }}</span>
+              <span>🏷️ {{ featured_post.category }}</span>
             </div>
-            <p>{{ featured_post.description }}</p>
             <span class="learn-more">Learn More <span>→</span></span>
           </div>
         </a>
@@ -35,10 +34,9 @@
           <div class="card-content">
             <h3>{{ post.title }}</h3>
             <div class="post-meta">
-              <span>📅 {{ post.date | date: "%B %d, %Y" }}</span>
-              <span>Program: <a href="{{ '/programs/' | relative_url }}{{ post.category | slugify }}/">{{ post.category }}</a></span>
+              <span>📅 {{ post.date | date: "%B %d" }}</span>
+              <span>🏷️ {{ post.category }}</span>
             </div>
-            <p>{{ post.description }}</p>
             <span class="learn-more">Learn More <span>→</span></span>
           </div>
         </a>

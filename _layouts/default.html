@@ -3,15 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title | default: "My Blog" }}
+    {% endif %}
+  </title>
+
+  <meta name="description" content="{{ page.description | default: site.description | default: 'A blog about productivity, Islam, and life management.' }}">
+  <meta name="author" content="{{ site.author | default: 'Mian Al Ruhanyat' }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <script>
+    (function() {
+      const storageKey = 'ramadanBannerDismissed_2026';
+      if (localStorage.getItem(storageKey) !== 'true') {
+        document.documentElement.classList.add('show-ramadan-banner');
+      }
+    })();
+  </script>
 </head>
 <body>
+
+  {% include ramadan-banner.html %}
 
   {% include header.html %}
 
@@ -20,6 +40,8 @@
   </main>
 
   {% include footer.html %}
+
+  <script src="{{ '/assets/js/ramadan-banner.js' | relative_url }}"></script>
 
 </body>
 </html>

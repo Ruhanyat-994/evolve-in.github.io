@@ -1033,3 +1033,246 @@ on ANY page (Homepage, Blog, Program)
 .writer-content {
   text-align: left;
 }
+/* 🌙 Ramadan Countdown Banner */
+.ramadan-banner {
+  width: 100%;
+  background-color: #5a1c0b;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Banner Layout */
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.banner-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Countdown Styling */
+.countdown {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prevent Flicker (Hide until JS updates) */
+.countdown {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.countdown.ready {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Countdown Numbers */
+.countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown span {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.countdown small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
+}
+
+/* Hide Animation When Closed */
+.ramadan-banner.hide {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .banner-title {
+    font-size: 1rem;
+  }
+
+  .countdown span {
+    font-size: 1.1rem;
+  }
+}
+/* 🌙 Ramadan Countdown Banner (Dark Orange + Modern Smart Design) */
+
+.ramadan-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #b94700, #ff7b00);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 1.4rem 0.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: opacity 0.4s ease, transform 0.4s ease, height 0.4s ease, padding 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Hidden after dismissal */
+.ramadan-banner.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Banner layout */
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Title text */
+.banner-title {
+  font-weight: 700;
+  font-size: 1.35rem; /* Increased */
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.banner-title::before {
+  content: "🌙";
+  font-size: 1.6rem;
+  position: relative;
+  top: 2px;
+}
+
+/* Countdown timer container */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* Becomes visible only when JS adds .ready */
+.countdown.ready {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Each time box */
+.countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  min-width: 60px;
+}
+
+.countdown span {
+  font-size: 1.5rem; /* Increased */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.countdown small {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem; /* Increased */
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .countdown {
+    gap: 1rem;
+  }
+
+  .countdown span {
+    font-size: 1.3rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+}

@@ -3,15 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Workouts For Busy People</title>
-  
+  <title>
+    
+      Home Workouts For Busy People | EvolveIn
+    
+  </title>
+
+  <meta name="description" content="No time for the gym? No problem. Stay fit from the comfort of your home.">
+  <meta name="author" content="Mian Al Ruhanyat">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script>
+    (function() {
+      const storageKey = 'ramadanBannerDismissed_2026';
+      if (localStorage.getItem(storageKey) !== 'true') {
+        document.documentElement.classList.add('show-ramadan-banner');
+      }
+    })();
+  </script>
 </head>
 <body>
+
+  <div id="ramadan-banner" class="ramadan-banner">
+    <div class="banner-content">
+      <span class="banner-title">Ramadan 2026 Countdown</span>
+      <div id="countdown-timer" class="countdown">
+        <div><span id="days">0</span><small>Days</small></div>
+        <div><span id="hours">0</span><small>Hours</small></div>
+        <div><span id="minutes">0</span><small>Minutes</small></div>
+        <div><span id="seconds">0</span><small>Seconds</small></div>
+      </div>
+      <button id="close-banner" class="close-btn">&times;</button>
+    </div>
+  </div>
 
   <header class="site-header">
   <div class="container">
@@ -30,7 +59,7 @@
           <a href="#">Programs <span>▾</span></a>
           <ul class="dropdown-menu">
             <li><a href="/programs/increase-productivity/">Increase Productivity</a></li>
-            <li><a href="/programs/pray-5-times/">Pray 5 Times</a></li>
+            <li><a href="/programs/pray-5-times/">Deen</a></li>
             <li><a href="/programs/home-workout/">Home Workout</a></li>
             <li><a href="/programs/gym-plan/">Gym Plan</a></li>
           </ul>
@@ -140,7 +169,7 @@ We write about <strong>time</strong>, <strong>Islam</strong> and <strong>life ma
       <h4>Programs</h4>
       <ul>
         <li><a href="/programs/increase-productivity/">Increase Productivity</a></li>
-        <li><a href="/programs/pray-5-times/">Pray 5 Times</a></li>
+        <li><a href="/programs/deen/">Deen</a></li>
         <li><a href="/programs/home-workout/">Home Workout</a></li>
         <li><a href="/programs/gym-plan/">Gym Plan</a></li>
       </ul>
@@ -149,9 +178,9 @@ We write about <strong>time</strong>, <strong>Islam</strong> and <strong>life ma
     <div class="footer-col">
       <h4>Contact Us</h4>
       <ul class="contact-info">
-        <li><span>📍</span> Usa - Washington DC</li>
-        <li><span>📞</span> 1234-56789</li>
-        <li><span>✉️</span> fitmaker@gmail.com</li>
+        <li><span>📍</span> Vatara, Notun Bazar, Dhaka, Banglasesh</li>
+        <!-- <li><span>📞</span> 1234-56789</li> -->
+        <li><span>✉️</span> evolvein.team@gmail.com</li>
       </ul>
     </div>
   </div>
@@ -159,6 +188,8 @@ We write about <strong>time</strong>, <strong>Islam</strong> and <strong>life ma
     <p>© 2025 EvolveIn | Built with ❤️ by Team EvolveIn</p>
   </div>
 </footer>
+
+  <script src="/assets/js/ramadan-banner.js"></script>
 
 </body>
 </html>

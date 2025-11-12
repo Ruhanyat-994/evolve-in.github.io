@@ -6,7 +6,7 @@ permalink: /blog/
 
 <div class="blog-page">
   <div class="container">
-    <h2 class="section-title">Fitmaker <span class="highlight">Blog</span></h2>
+    <h2 class="section-title">EvolveIn <span class="highlight">Blog</span></h2>
     <p class="subtitle">All our latest articles, guides, and tips to help you reach your goals.</p>
     
     <div class="blog-page-grid">

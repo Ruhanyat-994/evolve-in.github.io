@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    
+      Home - Transform Your Body | EvolveIn
+    
+  </title>
+
+  <meta name="description" content="Realize the potential Allah blessed you with through EvolveIn">
+  <meta name="author" content="Mian Al Ruhanyat">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans:wght@400;600&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script>
+    (function() {
+      const storageKey = 'ramadanBannerDismissed_2026';
+      if (localStorage.getItem(storageKey) !== 'true') {
+        document.documentElement.classList.add('show-ramadan-banner');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <div id="ramadan-banner" class="ramadan-banner">
+    <div class="banner-content">
+      <span class="banner-title">Ramadan 2026 Countdown</span>
+      <div id="countdown-timer" class="countdown">
+        <div><span id="days">0</span><small>Days</small></div>
+        <div><span id="hours">0</span><small>Hours</small></div>
+        <div><span id="minutes">0</span><small>Minutes</small></div>
+        <div><span id="seconds">0</span><small>Seconds</small></div>
+      </div>
+      <button id="close-banner" class="close-btn">&times;</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+  <div class="container">
+    <div class="brand-identity">
+      <a href="/" class="logo">
+        <span class="logo-main">Evolve<strong class="red-text">In</strong></span>
+        <span class="logo-tagline">Change Your Version</span>
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        
+        <li class="nav-dropdown">
+          <a href="#">Programs <span>▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/programs/increase-productivity/">Increase Productivity</a></li>
+            <li><a href="/programs/pray-5-times/">Deen</a></li>
+            <li><a href="/programs/home-workout/">Home Workout</a></li>
+            <li><a href="/programs/gym-plan/">Gym Plan</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <div class="intro-quote-wrapper">
+  <div class="intro-column">
+    <div class="hero-content-simple">
+  <h1>Realize the potential <span class="highlight">Allah blessed</span> you with</h1>
+  <h2>through Evolve<span class="highlight">In</span></h2>
+  <p>"We’re a group of passionate co-learners striving to upgrade ourselves — one version at a time. Here, productivity isn’t taught — it’s shared, built, and lived."</p>
+</div>  
+  </div>
+  <div class="quote-column">
+    <div class="quote-box">
+  <p class="quote-text" id="quote-text">Loading quote...</p>
+  <p class="quote-author" id="quote-author"></p>
+
+</div>
+
+<script>
+  // This script runs after the page has loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    
+    // Find the HTML elements we want to change
+    const quoteTextElement = document.getElementById("quote-text");
+    const quoteAuthorElement = document.getElementById("quote-author");
+
+    // Fetch the new quotes.json file
+    fetch('/quotes.json')
+      .then(response => {
+        if (!response.ok) {
+          // This error happens if quotes.json is missing
+          throw new Error('Could not find quotes.json. Please restart your Jekyll server.');
+        }
+        return response.json();
+      })
+      .then(quotes => {
+        
+        // Check if we actually got any quotes
+        if (quotes && quotes.length > 0) {
+          
+          // Pick a random number
+          const randomIndex = Math.floor(Math.random() * quotes.length);
+          
+          // Get the quote at that random position
+          const randomQuote = quotes[randomIndex];
+          
+          // Update the text on the page
+          // .innerHTML correctly handles special characters like '
+          quoteTextElement.innerHTML = randomQuote.quote;
+          quoteAuthorElement.innerHTML = "— " + randomQuote.author;
+
+        } else {
+          // This will show if your quotes.yml file is empty
+          quoteTextElement.textContent = "Add your inspirational quotes to the _data/quotes.yml file!";
+          quoteAuthorElement.textContent = "— The EvolveIn Team";
+        }
+      })
+      .catch(error => {
+        // This will show any error (like the one above)
+        console.error("Error fetching quotes:", error);
+        quoteTextElement.textContent = "Could not load quote.";
+        quoteAuthorElement.textContent = "Error";
+      });
+  });
+</script>
+  </div>
+</div>
+
+<section class="blogs-button-section">
+  <a href="/blog/" class="btn btn-primary">Blogs</a>
+</section>
+
+<section class="writers-section">
+  <div class="container">
+    <h2 class="section-title">Meet The <span class="highlight">Writers</span></h2>
+    <p class="subtitle">You can also join the writer community and add value to the society</p>
+    <div class="writers-grid">
+      
+      
+      <div class="writer-card">
+        <a href="/writers/arif-ashab-akib">
+          <div class="writer-card-image">
+             <img src="/assets/images/akib.png" alt="Arif Ashab Akib">
+          </div>
+          <h3>Arif Ashab Akib</h3>
+          <p>Personal Trainer</p>
+          <span class="learn-more">Learn More <span>→</span></span>
+        </a>
+      </div>
+      
+      <div class="writer-card">
+        <a href="/writers/mian-al-ruhanyat">
+          <div class="writer-card-image">
+             <img src="/assets/images/ruhanyat.png" alt="Mian Al Ruhanyat">
+          </div>
+          <h3>Mian Al Ruhanyat</h3>
+          <p>Personal Trainer</p>
+          <span class="learn-more">Learn More <span>→</span></span>
+        </a>
+      </div>
+      
+      <div class="writer-card">
+        <a href="/writers/mohammad-sami-chowdhury">
+          <div class="writer-card-image">
+             <img src="/assets/images/sami.png" alt="Mohammad Sami Chowdhury">
+          </div>
+          <h3>Mohammad Sami Chowdhury</h3>
+          <p>Personal Trainer</p>
+          <span class="learn-more">Learn More <span>→</span></span>
+        </a>
+      </div>
+      
+      <div class="writer-card">
+        <a href="/writers/tarik-jamil">
+          <div class="writer-card-image">
+             <img src="/assets/images/tarik.png" alt="Tarik Jamil">
+          </div>
+          <h3>Tarik Jamil</h3>
+          <p>Personal Trainer</p>
+          <span class="learn-more">Learn More <span>→</span></span>
+        </a>
+      </div>
+      
+      
+    </div>
+    
+    <div class="view-all-btn">
+      <a href="/about/" class="btn btn-secondary">View All <span>⟩</span></a>
+    </div>
+  </div>
+</section>
+<section class="blog-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Fitmaker <span class="highlight">Blog Posts</span></h2>
+        <p class="subtitle">Discover Essential Tips To Maximize Your Workout Results And Reach Your Fitness Goals Faster.</p>
+      </div>
+    </div>
+    
+    <div class="blog-grid">
+      
+      <div class="blog-card featured">
+        <a href="/increase%20productivity/2025/11/12/health-fitness.html">
+          <div class="card-image">
+            <img src="/assets/images/posts/stay-motivated.jpg" alt="Health Fitness">
+          </div>
+          <div class="card-content">
+            <h3>Health Fitness</h3>
+            <div class="post-meta">
+              <span>📅 November 12</span>
+              <span>🏷️ Increase Productivity</span>
+            </div>
+            <span class="learn-more">Learn More <span>→</span></span>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="blog-card">
+        <a href="/increase%20productivity/2025/08/18/how-to-stay-motivated.html">
+          <div class="card-image">
+            <img src="/assets/images/posts/stay-motivated.jpg" alt="How To Always Stay Motivated">
+          </div>
+          <div class="card-content">
+            <h3>How To Always Stay Motivated</h3>
+            <div class="post-meta">
+              <span>📅 August 18</span>
+              <span>🏷️ Increase Productivity</span>
+            </div>
+            <span class="learn-more">Learn More <span>→</span></span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="blog-card">
+        <a href="/home%20workout/2025/08/17/home-workouts-for-busy-people.html">
+          <div class="card-image">
+            <img src="/assets/images/posts/home-workouts.jpg" alt="Home Workouts For Busy People">
+          </div>
+          <div class="card-content">
+            <h3>Home Workouts For Busy People</h3>
+            <div class="post-meta">
+              <span>📅 August 17</span>
+              <span>🏷️ Home Workout</span>
+            </div>
+            <span class="learn-more">Learn More <span>→</span></span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="blog-card">
+        <a href="/home%20workout/2025/08/16/benefits-of-hiit-training.html">
+          <div class="card-image">
+            <img src="/assets/images/posts/hiit-training.jpg" alt="The Benefits Of HIIT Training">
+          </div>
+          <div class="card-content">
+            <h3>The Benefits Of HIIT Training</h3>
+            <div class="post-meta">
+              <span>📅 August 16</span>
+              <span>🏷️ Home Workout</span>
+            </div>
+            <span class="learn-more">Learn More <span>→</span></span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="blog-card">
+        <a href="/gym%20plan/2025/08/15/ultimate-guide-to-balanced-diet.html">
+          <div class="card-image">
+            <img src="/assets/images/posts/balanced-diet.jpg" alt="The Ultimate Guide To A Balanced Diet">
+          </div>
+          <div class="card-content">
+            <h3>The Ultimate Guide To A Balanced Diet</h3>
+            <div class="post-meta">
+              <span>📅 August 15</span>
+              <span>🏷️ Gym Plan</span>
+            </div>
+            <span class="learn-more">Learn More <span>→</span></span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="blog-card">
+        <a href="/gym%20plan/2025/08/14/5-essential-exercises.html">
+          <div class="card-image">
+            <img src="/assets/images/posts/build-muscle.jpg" alt="5 Essential Exercises For Building Muscle">
+          </div>
+          <div class="card-content">
+            <h3>5 Essential Exercises For Building Muscle</h3>
+            <div class="post-meta">
+              <span>📅 August 14</span>
+              <span>🏷️ Gym Plan</span>
+            </div>
+            <span class="learn-more">Learn More <span>→</span></span>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+
+    <div class="view-all-btn">
+      <a href="/blog/" class="btn btn-secondary">View All <span>⟩</span></a>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer" id="contact-section">
+  <div class="container">
+    <div class="footer-col brand-col">
+      <div class="logo">
+        <span class="logo-main">Evolve<strong class="red-text">In</strong></span>
+        <span class="logo-tagline">Change Your Version</span>
+      </div>
+      <p>At EvolveIn, our mission is to inspire mindful living through awareness and action.
+We write about <strong>time</strong>, <strong>Islam</strong> and <strong>life management</strong> — guiding each other toward balance and purpose.
+  Our <strong>blogs</strong> are not lessons, but shared reflections from co-learners on the same journey.</p>
+      <div class="social-icons">
+        <a href="#">f</a>
+        <a href="#">i</a>
+        <a href="#">X</a>
+        <a href="#">▷</a>
+      </div>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="#contact-section">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Workout Videos</a></li>
+        <li><a href="#">Nutrition Guides</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Success Stories</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="/programs/increase-productivity/">Increase Productivity</a></li>
+        <li><a href="/programs/deen/">Deen</a></li>
+        <li><a href="/programs/home-workout/">Home Workout</a></li>
+        <li><a href="/programs/gym-plan/">Gym Plan</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-info">
+        <li><span>📍</span> Vatara, Notun Bazar, Dhaka, Banglasesh</li>
+        <!-- <li><span>📞</span> 1234-56789</li> -->
+        <li><span>✉️</span> evolvein.team@gmail.com</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 EvolveIn | Built with ❤️ by Team EvolveIn</p>
+  </div>
+</footer>
+
+  <script src="/assets/js/ramadan-banner.js"></script>
+
+</body>
+</html>

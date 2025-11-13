@@ -1,0 +1,1278 @@
+/* ---
+1. Global Styles & Variables
+--- */
+:root {
+  --bg-gradient-start: #1b1b1b;
+  --bg-gradient-end: #2a0f0f;
+  --primary-accent: #e63926;
+  --secondary-accent: #ff5e14;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --card-bg: #242424;
+  --font-heading: 'Roboto Condensed', 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Added smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.small-container {
+  max-width: 800px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--primary-accent);
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.section-title .highlight {
+  color: var(--primary-accent);
+  text-transform: none;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+/* ---
+2. Buttons
+--- */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-accent);
+  color: var(--text-primary);
+}
+.btn-primary:hover {
+  background-color: var(--secondary-accent);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 38, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-accent);
+  color: var(--primary-accent);
+}
+.btn-secondary:hover {
+  background-color: var(--primary-accent);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.learn-more {
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.learn-more span {
+  color: var(--primary-accent);
+  margin-left: 5px;
+  transition: all 0.3s ease;
+}
+.learn-more:hover {
+  color: var(--primary-accent);
+}
+.learn-more:hover span {
+  margin-left: 10px;
+}
+
+/* ---
+3. Header
+--- */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for the brand identity (logo + text) */
+.brand-identity .logo {
+  display: block; /* Ensure the whole logo container is a block */
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+/* Logo main text (EvolveIn) */
+.logo-main {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  line-height: 1; 
+  display: block !important; /* Force this to be a block element */
+  margin-bottom: 2px; /* Small space between logo and tagline */
+}
+/* Red part of the logo (In) */
+.logo-main .red-text {
+  color: var(--primary-accent);
+  font-weight: 700;
+}
+
+/* Tagline (Change Your Version) */
+.logo-tagline {
+  display: block !important; /* Force this to be a block element */
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-top: 0; /* Remove top margin as space is on logo-main */
+}
+
+/* Use > (direct child selector) */
+.main-nav > ul {
+  list-style: none;
+  display: flex;
+}
+.main-nav li {
+  margin-left: 30px;
+}
+.main-nav a {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--primary-accent);
+}
+.main-nav a span {
+  color: var(--primary-accent);
+  font-size: 0.8em;
+}
+
+/* ---
+3.5 Header Dropdown
+--- */
+.nav-dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  /* HIDE BY DEFAULT */
+  opacity: 0;
+  visibility: hidden;
+  
+  display: block; 
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 10px 0;
+  min-width: 200px;
+  z-index: 100;
+  margin-top: 10px; /* Small gap */
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  list-style: none;
+}
+.dropdown-menu ul {
+  display: block;
+}
+.dropdown-menu li {
+  margin-left: 0;
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  border-bottom: none;
+  white-space: nowrap;
+}
+.dropdown-menu li a:hover {
+  color: var(--text-primary);
+  background-color: var(--primary-accent);
+  border-bottom: none;
+}
+
+/* SHOW ON HOVER */
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---
+3.8 Intro/Quote Wrapper
+--- */
+.intro-quote-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 80px 40px;
+  background: var(--bg-gradient-start); /* Dark base background */
+  align-items: center;
+}
+
+.intro-column {
+  position: relative;
+}
+
+.quote-column {
+  position: relative;
+}
+
+
+/* ---
+4. Hero
+--- */
+.hero {
+  position: relative;
+  text-align: left;
+  height: 100%;
+}
+.hero-content-simple {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: left;
+}
+.hero-content-simple h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content-simple h2 {
+  font-size: 3rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+.hero-content-simple p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  max-width: 600px;
+}
+.hero-buttons .btn {
+  margin: 0 10px;
+}
+
+/* ---
+5. Quote Section
+--- */
+.quote-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.quote-box {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 70px;
+  background-color: var(--card-bg); /* Dark card background */
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.quote-box::before {
+  content: '“';
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 5rem;
+  font-family: serif;
+  color: var(--primary-accent);
+  opacity: 0.8;
+  line-height: 1;
+  z-index: 2;
+}
+
+.quote-box::after {
+  content: '”';
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 5rem;
+  font-family: serif;
+  color: var(--primary-accent);
+  opacity: 0.8;
+  line-height: 1;
+  z-index: 2;
+}
+
+.quote-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-style: normal;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.quote-author {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--secondary-accent);
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-top: 1.5rem;
+}
+
+/* ---
+5.5 Blogs Button Section
+--- */
+.blogs-button-section {
+  background: var(--bg-gradient-start); /* Match the intro section */
+  padding: 40px 0;
+  text-align: center;
+  border-top: none; /* Removed the ugly border */
+}
+.blogs-button-section .btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+}
+
+
+/* ---
+6. Writers Section
+--- */
+.writers-section {
+  padding: 80px 0;
+}
+.writers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 3rem;
+}
+.writer-card {
+  text-align: center;
+}
+.writer-card a {
+  display: block; /* Makes the whole logo container is a block */
+}
+.writer-card-image {
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.writer-card img {
+  display: block; /* Fixes small gap */
+  filter: grayscale(30%);
+  transition: all 0.3s ease;
+}
+.writer-card a:hover img {
+  filter: grayscale(0);
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(230, 57, 38, 0.2);
+}
+.writer-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+.writer-card p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.view-all-btn {
+  text-align: center;
+}
+.view-all-btn .btn-secondary {
+  padding: 10px 40px;
+  font-size: 1.1rem;
+}
+.view-all-btn span {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  line-height: 1;
+}
+
+/* ---
+7. Blog Section (Homepage)
+--- */
+.blog-section {
+  padding: 80px 0;
+  background: var(--card-bg);
+}
+.blog-section .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.blog-section .section-header .section-title,
+.blog-section .section-header .subtitle {
+  text-align: left;
+  margin: 0;
+  max-width: none;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 30px;
+  margin-bottom: 3rem;
+}
+.blog-grid .blog-card.featured {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+.blog-grid .featured .card-image {
+  height: 400px; /* Taller for featured image */
+}
+
+/* ---
+11. Blog Page & Program Page
+--- */
+.blog-page {
+  padding: 80px 0;
+}
+.blog-page .section-title {
+  margin-bottom: 1rem;
+}
+.blog-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 3rem;
+}
+
+/* ---
+=======================================
+BLOG CARD STYLES (UNIVERSAL)
+This now styles ALL .blog-card
+on ANY page (Homepage, Blog, Program)
+=======================================
+--- */
+.blog-card {
+  background: var(--bg-gradient-start);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(230, 57, 38, 0.2);
+}
+.blog-card a {
+  display: block;
+  height: 100%;
+}
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.blog-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+}
+.featured .card-content {
+  padding: 30px;
+}
+
+/* THIS IS THE FIX:
+  These rules are now more specific. They will style the text
+  on BOTH the homepage (.blog-grid) AND the blog page (.blog-page-grid).
+*/
+
+/* This styles the post title */
+.blog-grid .card-content h3,
+.blog-page-grid .card-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.blog-grid .featured .card-content h3,
+.blog-page-grid .featured .card-content h3 {
+  font-size: 1.8rem;
+}
+
+/* This styles the Date / Program info */
+.blog-grid .post-meta,
+.blog-page-grid .post-meta {
+  display: flex;
+  flex-direction: column; /* Stack date and program */
+  gap: 8px; /* Space between date and program */
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+.blog-grid .post-meta span,
+.blog-page-grid .post-meta span {
+  display: inline-block;
+}
+.blog-grid .post-meta a,
+.blog-page-grid .post-meta a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.blog-grid .post-meta a:hover,
+.blog-page-grid .post-meta a:hover {
+  color: var(--primary-accent);
+  text-decoration: underline;
+}
+
+/* This styles the description text */
+.blog-grid .card-content p,
+.blog-page-grid .card-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  
+  /* Truncate text to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* This styles the "Learn More" link */
+.blog-grid .card-content .learn-more,
+.blog-page-grid .card-content .learn-more {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+/* ---
+8. Footer
+--- */
+.site-footer {
+  padding: 80px 0 0 0;
+  background: #111;
+  font-size: 0.95rem;
+}
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.footer-col {
+  flex: 1;
+  min-width: 180px;
+}
+.footer-col.brand-col {
+  flex-basis: 30%;
+  min-width: 300px;
+}
+.brand-col .logo {
+  margin-bottom: 1.5rem;
+}
+.brand-col .logo-main {
+  font-size: 2rem;
+}
+.brand-col .logo-tagline {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+.brand-col p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+.brand-col p strong {
+  color: var(--primary-accent);
+}
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--text-secondary);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+.social-icons a:hover {
+  background: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: var(--text-primary);
+}
+
+.footer-col h4 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+.footer-col ul {
+  list-style: none;
+}
+.footer-col li {
+  margin-bottom: 1rem;
+}
+.footer-col a,
+.contact-info li {
+  color: var(--text-secondary);
+}
+.footer-col a:hover {
+  color: var(--primary-accent);
+  padding-left: 5px;
+}
+.contact-info span {
+  margin-right: 10px;
+  color: var(--primary-accent);
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 50px;
+}
+.footer-bottom p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ---
+9. Post Page
+--- */
+.post {
+  padding: 60px 0;
+}
+.post-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.post-image-header {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.post-image-header img {
+  width: 100%;
+  object-fit: cover;
+}
+.post-title {
+  font-size: 3rem;
+  color: var(--text-primary);
+}
+.post-meta {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem; /* Added margin */
+}
+.post-meta a {
+  color: var(--primary-accent);
+  text-decoration: none;
+}
+.post-meta a:hover {
+  text-decoration: underline;
+}
+
+.post-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.post-content h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-accent);
+  padding-bottom: 5px;
+}
+.post-content h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.post-content p {
+  margin-bottom: 1.5rem;
+}
+.post-content img {
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+.post-content strong {
+  color: var(--text-primary);
+}
+
+/* ---
+10. Responsive
+--- */
+@media (max-width: 992px) {
+  .site-header .container {
+    flex-wrap: wrap;
+  }
+  .main-nav {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+  }
+  /* Use > to target only the main nav bar */
+  .main-nav > ul {
+    justify-content: center;
+  }
+  
+  .intro-quote-wrapper {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+  }
+  .hero-content-simple {
+    text-align: center;
+  }
+  .hero-content-simple h1 {
+    font-size: 3.5rem; /* Slightly smaller for centered view */
+  }
+  .hero-content-simple p {
+    margin: 0 auto 2.5rem auto; /* Add margin at bottom to space from quote */
+  }
+  .quote-box {
+    padding: 40px 50px;
+    max-width: 100%;
+  }
+
+  .writers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Responsive grids for blog */
+  .blog-grid,
+  .blog-page-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .blog-card.featured {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  .featured .card-image {
+    height: 300px;
+  }
+  
+  .site-footer .container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content-simple h1 {
+    font-size: 3rem;
+  }
+  .hero-content-simple h2 {
+    font-size: 2rem;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .section-header .section-title,
+  .section-header .subtitle {
+    text-align: center;
+  }
+
+  /* Make dropdown full-width on mobile */
+  .main-nav {
+    width: 100%;
+  }
+  /* Use > to target only the main nav bar */
+  .main-nav > ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .main-nav li {
+    margin-left: 0;
+    text-align: center;
+  }
+  .dropdown-menu {
+    position: static;
+    display: none; /* Hide on mobile by default */
+    background: none;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+    opacity: 1; /* Keep visible if somehow triggered */
+    visibility: visible;
+  }
+  /* This would be a .nav-dropdown.active class if we add JS for mobile toggle */
+  .nav-dropdown:hover .dropdown-menu {
+     display: block; /* For a hover-based mobile menu, if desired */
+  }
+
+  .dropdown-menu li a {
+    padding: 10px;
+    color: var(--text-secondary);
+  }
+  .dropdown-menu li a:hover {
+    background: var(--card-bg); /* Use card bg for hover */
+  }
+  
+  .quote-box {
+    padding: 40px 50px;
+  }
+  .quote-text {
+    font-size: 2.2rem;
+  }
+  .quote-author {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .main-nav li {
+    margin: 0 10px;
+  }
+  .main-nav a {
+    font-size: 1rem;
+  }
+  
+  .intro-quote-wrapper {
+    padding: 40px 20px;
+  }
+  .hero-content-simple h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content-simple h2 {
+    font-size: 1.8rem;
+  }
+  
+  .quote-box {
+    padding: 30px 30px;
+  }
+  .quote-box::before,
+  .quote-box::after {
+    font-size: 3rem;
+    top: 10px;
+    left: 15px;
+    bottom: 10px;
+    right: 15px;
+  }
+  .quote-text {
+    font-size: 1.7rem;
+  }
+  .quote-author {
+    font-size: 1rem;
+  }
+  
+  .writers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Responsive grids for blog */
+  .blog-grid,
+  .blog-page-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-card.featured {
+    grid-column: 1 / 2;
+  }
+  
+  .footer-col {
+    flex-basis: 100%;
+    min-width: unset;
+    text-align: center;
+  }
+  .brand-col p {
+    text-align: left;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* ---
+12. Writers Page
+--- */
+.writers-page {
+  padding: 80px 0;
+}
+.writers-page-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 3rem;
+}
+
+/* Responsive for writers page grid */
+@media (max-width: 992px) {
+  .writers-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .writers-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---
+13. Writer Profile Page
+--- */
+.writer-profile {
+  padding: 60px 0;
+}
+.writer-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.writer-image-header {
+  width: 200px; /* Control the size */
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%; /* Make it a circle */
+  margin: 0 auto 2rem auto;
+  border: 4px solid var(--primary-accent);
+}
+.writer-image-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.writer-title {
+  font-size: 3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.writer-role {
+  font-size: 1.2rem;
+  color: var(--primary-accent);
+  font-family: var(--font-heading);
+}
+/* We can re-use .post-content for the writer's bio */
+.writer-content {
+  text-align: left;
+}
+/* 🌙 Ramadan Countdown Banner */
+.ramadan-banner {
+  width: 100%;
+  background-color: #5a1c0b;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Banner Layout */
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.banner-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Countdown Styling */
+.countdown {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Prevent Flicker (Hide until JS updates) */
+.countdown {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.countdown.ready {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Countdown Numbers */
+.countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown span {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.countdown small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.close-btn:hover {
+  opacity: 0.7;
+}
+
+/* Hide Animation When Closed */
+.ramadan-banner.hide {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .banner-title {
+    font-size: 1rem;
+  }
+
+  .countdown span {
+    font-size: 1.1rem;
+  }
+}
+/* 🌙 Ramadan Countdown Banner (Dark Orange + Modern Smart Design) */
+
+.ramadan-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #b94700, #ff7b00);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 1.4rem 0.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: opacity 0.4s ease, transform 0.4s ease, height 0.4s ease, padding 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Hidden after dismissal */
+.ramadan-banner.hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Banner layout */
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Title text */
+.banner-title {
+  font-weight: 700;
+  font-size: 1.35rem; /* Increased */
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.banner-title::before {
+  content: "🌙";
+  font-size: 1.6rem;
+  position: relative;
+  top: 2px;
+}
+
+/* Countdown timer container */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* Becomes visible only when JS adds .ready */
+.countdown.ready {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Each time box */
+.countdown div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  min-width: 60px;
+}
+
+.countdown span {
+  font-size: 1.5rem; /* Increased */
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.countdown small {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem; /* Increased */
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .banner-title {
+    font-size: 1.15rem;
+  }
+
+  .countdown {
+    gap: 1rem;
+  }
+
+  .countdown span {
+    font-size: 1.3rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+}
